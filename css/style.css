@@ -686,3 +686,113 @@ textarea:focus {
         margin-top: 0.75rem;
     }
 }
+
+
+/* Correção final dos botões da Home e dropdown de currículo */
+.hero-actions {
+    align-items: center;
+}
+
+.hero-actions .btn,
+.hero-actions .download-toggle {
+    min-height: 48px;
+    padding: 0.85rem 1.3rem;
+    font: inherit;
+    font-size: 1rem;
+    line-height: 1.2;
+    font-weight: 700;
+    appearance: none;
+    -webkit-appearance: none;
+}
+
+.hero-actions .btn-secondary,
+.hero-actions .download-toggle {
+    color: var(--text-main);
+    background: rgba(139, 92, 246, 0.08);
+    border: 1px solid var(--border-color);
+}
+
+.hero-actions .btn-secondary:hover,
+.hero-actions .download-toggle:hover {
+    background: rgba(139, 92, 246, 0.18);
+    border-color: var(--purple-soft);
+}
+
+.hero-actions .download-dropdown {
+    position: relative;
+    display: inline-flex;
+    align-items: stretch;
+}
+
+.hero-actions .download-menu {
+    display: none;
+    position: absolute;
+    top: calc(100% + 0.75rem);
+    left: 0;
+    min-width: 240px;
+    padding: 0.6rem;
+    background: linear-gradient(180deg, var(--bg-card-light), var(--bg-card));
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    box-shadow: var(--shadow);
+    z-index: 40;
+}
+
+.hero-actions .download-dropdown.open .download-menu {
+    display: grid;
+    gap: 0.35rem;
+}
+
+.hero-actions .download-menu a {
+    display: block;
+    padding: 0.75rem 0.9rem;
+    color: var(--text-main);
+    border-radius: 12px;
+    font-weight: 700;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+.hero-actions .download-menu a:hover {
+    background: rgba(139, 92, 246, 0.18);
+    color: var(--purple-soft);
+}
+
+/* Ajuste mais amplo para mobile e telas estreitas */
+@media (max-width: 820px) {
+    .hero-actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .hero-actions .btn,
+    .hero-actions .download-dropdown,
+    .hero-actions .download-toggle {
+        width: 100%;
+    }
+
+    .hero-actions .download-dropdown {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .hero-actions .download-menu {
+        position: static;
+        width: 100%;
+        min-width: 0;
+        margin-top: 0.75rem;
+    }
+}
+
+.hero-actions .btn-primary,
+.hero-actions .download-toggle {
+    background: var(--purple-main);
+    color: #ffffff;
+    border-color: var(--purple-main);
+}
+
+.hero-actions .btn-primary:hover,
+.hero-actions .download-toggle:hover {
+    background: var(--purple-soft);
+    border-color: var(--purple-soft);
+    color: #ffffff;
+}
