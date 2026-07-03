@@ -489,8 +489,8 @@ textarea:focus {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    padding: 0.85rem 1.3rem;
     min-height: 48px;
+    padding: 0.85rem 1.3rem;
     border: 1px solid transparent;
     border-radius: 999px;
     font: inherit;
@@ -512,7 +512,13 @@ textarea:focus {
 
 .btn-secondary {
     color: var(--text-main);
+    background: rgba(139, 92, 246, 0.08);
     border-color: var(--border-color);
+}
+
+.btn-secondary:hover {
+    background: rgba(139, 92, 246, 0.18);
+    border-color: var(--purple-soft);
 }
 
 .download-dropdown {
@@ -521,7 +527,6 @@ textarea:focus {
 }
 
 .download-toggle {
-    background: transparent;
     min-height: 48px;
 }
 
@@ -530,7 +535,7 @@ textarea:focus {
     position: absolute;
     top: calc(100% + 0.75rem);
     left: 0;
-    min-width: 260px;
+    min-width: 240px;
     padding: 0.6rem;
     background: linear-gradient(180deg, var(--bg-card-light), var(--bg-card));
     border: 1px solid var(--border-color);
@@ -556,6 +561,11 @@ textarea:focus {
 .download-menu a:hover {
     background: rgba(139, 92, 246, 0.18);
     color: var(--purple-soft);
+}
+
+.download-dropdown.open .download-menu {
+    display: grid;
+    gap: 0.35rem;
 }
 
 .site-footer {
@@ -660,7 +670,9 @@ textarea:focus {
     }
 
     .download-dropdown {
-    width: 100%;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
     }
 
     .download-toggle {
